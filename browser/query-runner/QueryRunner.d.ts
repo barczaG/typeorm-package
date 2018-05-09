@@ -1,15 +1,15 @@
-import { TableColumn } from "../schema-builder/table/TableColumn";
-import { Table } from "../schema-builder/table/Table";
-import { TableForeignKey } from "../schema-builder/table/TableForeignKey";
-import { TableIndex } from "../schema-builder/table/TableIndex";
-import { Connection } from "../connection/Connection";
-import { ReadStream } from "../platform/PlatformTools";
-import { EntityManager } from "../entity-manager/EntityManager";
-import { ObjectLiteral } from "../common/ObjectLiteral";
-import { SqlInMemory } from "../driver/SqlInMemory";
-import { TableUnique } from "../schema-builder/table/TableUnique";
-import { Broadcaster } from "../subscriber/Broadcaster";
-import { TableCheck } from "../schema-builder/table/TableCheck";
+import { TableColumn } from '../schema-builder/table/TableColumn';
+import { Table } from '../schema-builder/table/Table';
+import { TableForeignKey } from '../schema-builder/table/TableForeignKey';
+import { TableIndex } from '../schema-builder/table/TableIndex';
+import { Connection } from '../connection/Connection';
+import { ReadStream } from '../platform/PlatformTools';
+import { EntityManager } from '../entity-manager/EntityManager';
+import { ObjectLiteral } from '../common/ObjectLiteral';
+import { SqlInMemory } from '../driver/SqlInMemory';
+import { TableUnique } from '../schema-builder/table/TableUnique';
+import { Broadcaster } from '../subscriber/Broadcaster';
+import { TableCheck } from '../schema-builder/table/TableCheck';
 /**
  * Runs queries on a single database connection.
  */
@@ -78,6 +78,10 @@ export interface QueryRunner {
      * Executes a given SQL query and returns raw database results.
      */
     query(query: string, parameters?: any[]): Promise<any>;
+    /**
+     * Executes a given SQL query and returns raw database results.
+     */
+    queryWithResults(query: string, parameters?: any[]): Promise<any>;
     /**
      * Returns raw data stream.
      */
